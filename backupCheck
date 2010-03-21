@@ -1,0 +1,11 @@
+E_NO_ARGS=1
+if [ -z "$1" ] 
+then
+	echo Usage: `basename $0` "<dirname>"
+	exit $E_NOARGS
+fi
+directory=$1
+# Output is in format date-time-directory
+outputfile=`date +%y%m%d.%H%M`.`basename $directory`.check
+echo Sending output to file $outputfile
+storeBackupCheckBackup.pl -b $directory >$outputfile 2>&1

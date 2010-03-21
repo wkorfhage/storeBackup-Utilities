@@ -1,0 +1,15 @@
+This contains utility files for use with storeBackup 
+
+http://savannah.nongnu.org/projects/storebackup
+
+
+backupCheck:
+
+This runs storeBackupCheckBackup, but redirects the output to a timestamped file.
+
+
+fixbadfiles.py:
+
+Sometimes there is a bit error when copying files to the backup. storeBackupCheckBackup
+will list these problem files in its output. This program parses that output (which you
+have stored in a file), and copies them again from the source.
